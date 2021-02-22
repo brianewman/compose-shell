@@ -10,4 +10,4 @@ RUN apt-get -y install docker-compose
 VOLUME /var/run/docker.sock
 
 #WORKDIR /home/docker
-CMD /bin/bash
+ENTRYPOINT [ "/bin/bash" ]

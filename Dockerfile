@@ -1,7 +1,5 @@
 FROM ubuntu:latest
 
-RUN hostname compose
-
 RUN apt-get update && apt-get -y install curl
 RUN curl -fsSL https://get.docker.com -o get-docker.sh
 RUN sh get-docker.sh

@@ -14,3 +14,5 @@ USER user
 
 VOLUME /var/run/docker.sock
 WORKDIR /home/user
+
+CMD ["/usr/sbin/sshd","-D"]

@@ -4,7 +4,7 @@ VOLUME /var/run/docker.sock
 VOLUME /home
 EXPOSE 22
 
-RUN apt update && apt install  openssh-server sudo install curl vim -y
+RUN apt update && apt install  openssh-server sudo curl vim -y
 RUN service ssh start
 RUN curl -fsSL https://get.docker.com -o get-docker.sh
 RUN sh get-docker.sh

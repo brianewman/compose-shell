@@ -10,10 +10,13 @@ RUN apt-get -y install docker-compose
 RUN useradd -rm -s /bin/bash -g root -G sudo,docker -u 1000 user 
 RUN echo 'user:OOicu812' | chpasswd
 
-COPY run.sh
+COPY run.sh /usr/local/bin/run.sh 
+RUN chmod +x /usr/local/bin/run.sh 
+CMD ["run.sh"]
+
 VOLUME /var/run/docker.sock
 VOLUME /home
-EXPOSE 22
 
+EXPOSE 22
 WORKDIR /home/user
-ENTRYPOINT [ "run.sh" ]
+

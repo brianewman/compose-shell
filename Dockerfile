@@ -1,6 +1,5 @@
 FROM ubuntu:latest
 
-VOLUME /var/run/docker.sock
 VOLUME /home
 EXPOSE 22
 
@@ -13,4 +12,5 @@ RUN useradd -rm -s /bin/bash -g root -G sudo,docker -u 1000 user
 RUN echo 'user:OOicu812' | chpasswd
 USER user
 
+VOLUME /var/run/docker.sock
 WORKDIR /home/user

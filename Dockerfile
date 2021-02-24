@@ -6,7 +6,7 @@ RUN sh get-docker.sh
 RUN apt-get -y install docker-compose
 RUN useradd -rm -s /bin/bash -g root -G sudo,docker -u 1000 user 
 RUN echo 'user:password' | chpasswd
-RUN password --expire user
+RUN passwd --expire user
 
 COPY run.sh /usr/local/bin/run.sh 
 RUN chmod +x /usr/local/bin/run.sh 

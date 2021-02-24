@@ -1,4 +1,9 @@
 #! /bin/bash
-groupadd -g `ls -l /var/run/docker.sock | awk '{print $4}'` host_docker
-usermod -a -G host_docker user
+if test -f /home/.done; then
+else
+  groupadd -g `ls -l /var/run/docker.sock | awk '{print $4}'` host_docker
+  usermod -a -G host_docker user
+  touch /home/.done
+fi
 service ssh start
+/bin/bash
